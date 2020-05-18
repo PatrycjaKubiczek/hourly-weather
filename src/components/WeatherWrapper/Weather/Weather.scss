@@ -1,0 +1,71 @@
+  .col {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    // min-width: 100px;
+    // border-right: 1px solid #ddd;
+    box-shadow:1px 0px 0px 0px #ddd;
+    // width: 100px;
+    // max-width: 100px;
+    height: 100%;
+  }
+
+.empty-slot {
+  width: 50px;
+  height: 100px;
+}
+
+.item--wind,
+.item--windspeed {
+  background-color: #eee;
+  border-right: 1px solid #fff;
+  margin-right: -1px;
+}
+
+.item {
+  min-width: 50px;
+  height: 100%;
+  width: 100px;
+}
+
+.item--precip {
+  height: 100%;
+  max-height: 100px;
+  width: 100%;
+  min-width: 4960px;
+  margin-bottom: -5px;
+}
+
+.item--day,
+.item--hour,
+.item--icon,
+.item--wind,
+.item--windspeed {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.item--day {
+  max-height: 50px;
+}
+
+.item--wind {
+}
+
+
+.triangle_left {
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-right: 20px solid #fff;
+  border-bottom: 10px solid transparent;
+}
+.triangle_right {
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-left: 20px solid #fff;
+  border-bottom: 10px solid transparent;
+}
