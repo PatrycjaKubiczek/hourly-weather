@@ -14,7 +14,7 @@ class CustomizedLabel extends PureComponent {
         fontSize={20}
         textAnchor="middle"
       >
-        {value} °
+        {value}°
       </text>
     );
   }
@@ -24,12 +24,12 @@ class Temperature extends Component {
   render() {
     const { data } = this.props;
     return (
-      <div style={{ height: "100%", width: "4900px"}}>
+      <div style={{ height: "100%", width: "4900px" }}>
         <ResponsiveContainer height={100}>
           <LineChart
             data={data}
             margin={{
-              top: 30,
+              top: 40,
               bottom: 5,
               left: 40,
               right: 40,
@@ -39,7 +39,7 @@ class Temperature extends Component {
             <Line
               type="monotone"
               dataKey="temp"
-              stroke="#ffff00"
+              stroke="#f9d348"
               dot={{ stroke: "black", strokeWidth: 1 }}
             >
               <LabelList

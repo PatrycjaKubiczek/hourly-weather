@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 
+import "./WindBearing.scss"
+
 class WindBearing extends Component {
   degToDirection = (num) => {
     let value = Math.round(num / 45);
@@ -23,15 +25,13 @@ class WindBearing extends Component {
         <div
           style={{
             transform: `rotate(${data}deg)`,
-            height: 20,
-            width: 20,
-            padding: 15,
           }}
+          className="wind__wrapper"
         >
-          <svg viewBox="0 0 16 16">
-            <polygon
-              points="8,0.409 2.35,15.486 8,12.396 13.65,15.486"
-            ></polygon>
+          <svg className="wind__svg">
+              <svg viewBox="0 0 16 16">
+                <polygon points="8,0.409 2.35,15.486 8,12.396 13.65,15.486 "></polygon>
+              </svg>
           </svg>
         </div>
 

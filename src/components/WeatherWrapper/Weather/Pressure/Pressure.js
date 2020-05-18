@@ -23,33 +23,33 @@ class Pressure extends Component {
   render() {
     const { data } = this.props;
     return (
-            <div style={{ height: "100%", width: "4900px" }}>
+      <div style={{ height: "100%", width: "4900px" }}>
         <ResponsiveContainer height={100}>
-      <LineChart
-        width={4900}
-        height={100}
-        data={data}
-        margin={{
-          top: 55,
-          right: 40,
-          left: 40,
-          bottom: 5,
-        }}
-      >
-        <Line
-          type="monotone"
-          dataKey="pressure"
-          stroke="#000"
-          dot={{ stroke: "black", strokeWidth: 1 }}
-        >
-          <LabelList
-            dataKey="pressure"
-            position="top"
-            content={<CustomizedLabel />}
-          />
-        </Line>
-      </LineChart>
-      </ResponsiveContainer>
+          <LineChart
+            width={4900}
+            height={100}
+            data={data}
+            margin={{
+              top: 55,
+              right: 40,
+              left: 40,
+              bottom: 5,
+            }}
+          >
+            <Line
+              type="monotone"
+              dataKey="pressure"
+              stroke="#000"
+              dot={{ stroke: "black", strokeWidth: 1 }}
+            >
+              <LabelList
+                dataKey="pressure"
+                position="top"
+                content={<CustomizedLabel />}
+              />
+            </Line>
+          </LineChart>
+        </ResponsiveContainer>
       </div>
     );
   }

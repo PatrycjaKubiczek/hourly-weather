@@ -9,6 +9,7 @@ import Precipitation from "./Precipitation/Precipitation";
 import Pressure from "./Pressure/Pressure";
 import WindBearing from "./WindBearing/WindBearing";
 import WindSpeed from "./WindSpeed/WindSpeed";
+import Weekday from "./Weekday/Weekday";
 class Weather extends Component {
   render() {
     const { data } = this.props;
@@ -27,8 +28,7 @@ class Weather extends Component {
        let pressRound = Math.round(pressure);
       return { name: "temperatura", pressure: pressRound };
     });
-
-    const days = ["niedziela", "poniedziałek", "wtorek", "środa", "czwartek", "piątek", "sobota", ];
+   
     const params = {
       slidesPerView: "auto",
       navigation: {
@@ -49,12 +49,12 @@ class Weather extends Component {
       },
       renderPrevButton: () => (
         <button className="arrow swiper-button-prev">
-          <div className="triangle_left"></div>
+          <div className="triangle--left"></div>
         </button>
       ),
       renderNextButton: () => (
         <button className="arrow swiper-button-next">
-          <div className="triangle_right"></div>
+          <div className="triangle--right"></div>
         </button>
       ),
     };
@@ -63,12 +63,8 @@ class Weather extends Component {
         {data.map((hour, index) => {
           return (
             <div className="col" key={index} id={index}>
-              <svg height="100" width="100">
-                <polygon points="250,60 100,400 400,400" class="triangle" />
-                Sorry, your browser does not support inline SVG.
-              </svg>
               <div className="item item--day">
-                {days[new Date(hour.time * 1000).getDay()]}
+                <Weekday day={hour.time} />
               </div>
 
               <div className="item item--hour">
@@ -94,17 +90,15 @@ class Weather extends Component {
                   <div className="empty-slot"></div>
                 )}
               </div>
+
               <div className="item item--wind">
                 <WindBearing data={hour.windBearing}></WindBearing>
               </div>
+
               <div className="item item--windspeed">
                 <WindSpeed data={hour.windSpeed}></WindSpeed>
-                {/* <p>
-                  Słaby <br />
-                  
-                  {Math.round(hour.windSpeed)} km/h
-                </p> */}
               </div>
+
               <div className="item item--pressure">
                 {index === 0 ? (
                   <Pressure data={pressureRow}></Pressure>

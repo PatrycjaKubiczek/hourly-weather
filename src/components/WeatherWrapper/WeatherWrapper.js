@@ -3,8 +3,15 @@ import React, { Component } from "react";
 import Weather from "./Weather/Weather";
 import styles from './WeatherWrapper.module.scss'
 
+
+const LONDON_COORDS = '51.509865,-0.118092' // LONDON, UK
+const CRACOW_COORDS = "50.064651,19.944981"; // CRACOW
+const COPENHAGEN_CORDS = "55.676098,12.568337"
+
 const API =
-  "https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/944c9a45b3172504520c7e1bd197185f/50.064651,19.944981?lang=pl&units=ca";
+  "https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/944c9a45b3172504520c7e1bd197185f/" +
+  COPENHAGEN_CORDS +
+  "?lang=pl&units=ca";
 
 class WeatherWrapper extends Component {
   state = {

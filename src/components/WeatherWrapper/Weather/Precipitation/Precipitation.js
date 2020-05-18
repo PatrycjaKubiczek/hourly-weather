@@ -28,26 +28,26 @@ class Precipitation extends Component {
     return (
       <div style={{ height: "100%", width: "4900px" }}>
         <ResponsiveContainer>
-        <BarChart
-          width={4950}
-          height={100}
-          margin={{
-            top: 25,
-            bottom: 0,
-            left: 0,
-          }}
-          data={data}
-          barCategoryGap={0}
-        >
-          <Bar dataKey="precipIntensity" fill="#3d9fd0" barGap={0}>
-            <LabelList
-              dataKey="precipIntensity"
-              position="top"
-              content={<CustomizedLabel />}
-            />
-          </Bar>
-          <YAxis type="number" domain={[0, "dataMax + 20"]} hide={true} />
-        </BarChart>
+          <BarChart
+            width={4950}
+            height={100}
+            margin={{
+              top: 25,
+              bottom: 0,
+              left: 0,
+            }}
+            data={data}
+            barCategoryGap={1}
+          >
+            <Bar dataKey="precipIntensity" fill="#65cafa" barGap={0}>
+              <LabelList
+                dataKey="precipIntensity"
+                position="top"
+                content={<CustomizedLabel />}
+              />
+            </Bar>
+            <YAxis type="number" domain={[0, "dataMax + 5"]} hide={true} />
+          </BarChart>
         </ResponsiveContainer>
       </div>
     );

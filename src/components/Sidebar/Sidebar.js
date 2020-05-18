@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./_Sidebar.module.scss";
+import  "./Sidebar.scss";
 
 function Sidebar() {
   const containerNames = [
@@ -13,15 +13,16 @@ function Sidebar() {
     "Ciśnienie",
   ];
   return (
-    <aside className={styles.sidebar}>
+    <aside className="sidebar">
       {containerNames.map((name, index) => {
         return (
           <div
-            className={styles.sidebar__container}
+            className={
+              name === "Dzień"
+                ? "sidebar__container--day"
+                : "sidebar__container"
+            }
             key={index}
-            style={{
-              height: name === "dzień" ? "50px" : "auto",
-            }}
           >
             <p>{name}</p>
           </div>

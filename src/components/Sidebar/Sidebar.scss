@@ -1,9 +1,13 @@
 .sidebar {
-  width: 20%;
+  width: 15%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   padding-left: 50px;
+  @media screen and (max-width: 767px){
+    padding-left: 0;
+    width: 22%;
+  }
 
   .sidebar__container {
     height: 100%;
@@ -12,10 +16,17 @@
     align-items: center;
     border-bottom: 1px solid #ddd;
     position: relative;
+    color: #888888;
   }
 
+  .sidebar__container--day {
+    @extend .sidebar__container;
+    height: 50px;
+  }
+  
   p {
     padding: 5px;
-    font-size: 14px;
+    font-size: 12px;
   }
+
 }
