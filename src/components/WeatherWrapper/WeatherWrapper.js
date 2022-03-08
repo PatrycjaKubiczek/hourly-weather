@@ -4,14 +4,18 @@ import Weather from "./Weather/Weather";
 import styles from './WeatherWrapper.module.scss'
 
 
-const LONDON_COORDS = '51.509865,-0.118092' // LONDON, UK
-const CRACOW_COORDS = "50.064651,19.944981"; // CRACOW
-const COPENHAGEN_CORDS = "55.676098,12.568337"
+// const LONDON_COORDS = '51.509865,-0.118092' // LONDON, UK
+// const CRACOW_COORDS = "50.064651,19.944981"; // CRACOW
+// const COPENHAGEN_CORDS = "55.676098,12.568337";
+const CRACOW_LON = "50.064651";
+const CRACOW_LAT = "19.944981";
+const API_KEY = "bca2ebc0b3f8f46fe1b2883c0aafcdf5"
 
-const API =
-  "https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/944c9a45b3172504520c7e1bd197185f/" +
-  COPENHAGEN_CORDS +
-  "?lang=pl&units=ca";
+const API = `https://api.openweathermap.org/data/2.5/forecast/daily?lat={${CRACOW_LAT}}&lon={${CRACOW_LON}}&cnt={16}&appid={${API_KEY}}&lang={lang}`;
+  // "?lang=pl&units=ca";
+
+  console.log(API)
+
 
 class WeatherWrapper extends Component {
   state = {
