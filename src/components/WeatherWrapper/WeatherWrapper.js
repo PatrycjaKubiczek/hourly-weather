@@ -9,12 +9,10 @@ import styles from './WeatherWrapper.module.scss'
 // const COPENHAGEN_CORDS = "55.676098,12.568337";
 const CRACOW_LON = "50.064651";
 const CRACOW_LAT = "19.944981";
-const API_KEY = "bca2ebc0b3f8f46fe1b2883c0aafcdf5"
 
-const API = `https://api.openweathermap.org/data/2.5/forecast/daily?lat={${CRACOW_LAT}}&lon={${CRACOW_LON}}&cnt={16}&appid={${API_KEY}}&lang={lang}`;
+const API = `
+https://api.openweathermap.org/data/2.5/onecall?lat=${CRACOW_LAT}&lon=${CRACOW_LON}&appid=${process.env.REACT_APP_API_KEY}&units=metric&lang=pl`;
   // "?lang=pl&units=ca";
-
-  console.log(API)
 
 
 class WeatherWrapper extends Component {
@@ -28,9 +26,8 @@ class WeatherWrapper extends Component {
     fetch(API)
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
         this.setState({
-          hourlyWeather: data.hourly.data,
+          hourlyWeather: data.hourly,
           isLoading: false,
         });
       })
@@ -55,7 +52,7 @@ class WeatherWrapper extends Component {
     if (err) {
       return (
         <div className={styles.loader}>
-          <p>Błąd! :( Spróbuj odświeżyć stronę.</p>
+          <p>Błąd! :(</p>
         </div>
       );
     }

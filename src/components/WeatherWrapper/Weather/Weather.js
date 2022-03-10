@@ -14,14 +14,13 @@ class Weather extends Component {
   render() {
     const { data } = this.props;
 
-    const temps = this.props.data.map(({ temperature }) => {
-      let tempRound = Math.round(temperature);
+    const temps = this.props.data.map(({ temp }) => {
+      let tempRound = Math.round(temp);
       return { name: "temperatura", temp: tempRound };
     });
 
-    const precips = this.props.data.map(({ precipIntensity }) => {
-      let precipFixed = parseFloat(precipIntensity.toFixed(1));
-      return { name: "opad", precipIntensity: precipFixed };
+    const precips = this.props.data.map(({ pop }) => {
+      return { name: "opad", precipIntensity: pop };
     });
 
     const pressureRow = this.props.data.map(({ pressure }) => {
@@ -61,18 +60,19 @@ class Weather extends Component {
     return (
       <Swiper {...params} style={{ width: "400px", height: "400px" }}>
         {data.map((hour, index) => {
+
           return (
             <div className="col" key={index} id={index}>
               <div className="item item--day">
-                <Weekday day={hour.time} />
+                <Weekday day={hour.dt} />
               </div>
 
               <div className="item item--hour">
-                <p>{new Date(hour.time * 1000).getHours() + ":00"}</p>
+                <p>{new Date(hour.dt * 1000).getHours() + ":00"}</p>
               </div>
 
               <div className="item item--icon">
-                <WeatherIcon icon={hour.icon} />
+                <WeatherIcon icon={hour.weather[0].main} />
               </div>
 
               {index === 0 ? (
@@ -96,7 +96,7 @@ class Weather extends Component {
               </div>
 
               <div className="item item--windspeed">
-                <WindSpeed data={hour.windSpeed}></WindSpeed>
+                <WindSpeed data={hour.wind_speed}></WindSpeed>
               </div>
 
               <div className="item item--pressure">

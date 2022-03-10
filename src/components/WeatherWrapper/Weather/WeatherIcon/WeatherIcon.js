@@ -6,38 +6,26 @@ class WeatherIcon extends Component {
     let icon = propsIcon;
 
     switch (icon) {
-      case "clear-day":
+      case "Clear":
         return 'day-sunny';
 
-      case "clear-night":
-        return 'night-clear';
-
-      case "rain":
+      case "Rain":
         return 'rain';
 
-      case "snow":
+      case "Snow":
         return 'snow';
 
-      case "sleet":
-        return 'sleet';
-
-      case "wind":
+      case "Wind":
         return 'windy';
 
-      case "fog":
+      case "Fog":
         return 'fog';
 
-      case "cloudy":
+      case "Clouds":
         return 'cloud';
 
-      case "partly-cloudy-day":
-        return 'day-cloudy';
-
-      case "partly-cloudy-night":
-        return 'night-cloudy';
-
       default:
-        console.log("icon");
+        // console.log("icon");
     }
   };
 

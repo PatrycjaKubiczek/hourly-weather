@@ -24,7 +24,7 @@ class Temperature extends Component {
   render() {
     const { data } = this.props;
     return (
-      <div style={{ height: "100%", width: "4900px" }}>
+      <div style={{ height: "100%", width: "4800px" }}>
         <ResponsiveContainer height={100}>
           <LineChart
             data={data}
@@ -34,7 +34,7 @@ class Temperature extends Component {
               left: 40,
               right: 40,
             }}
-            width={4950}
+            // width={500}
           >
             <Line
               type="monotone"
@@ -48,6 +48,7 @@ class Temperature extends Component {
                 content={<CustomizedLabel />}
               />
             </Line>
+            {/* <XAxis width={5000}/> */}
           </LineChart>
         </ResponsiveContainer>
       </div>
