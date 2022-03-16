@@ -7,12 +7,11 @@ import styles from './WeatherWrapper.module.scss'
 // const LONDON_COORDS = '51.509865,-0.118092' // LONDON, UK
 // const CRACOW_COORDS = "50.064651,19.944981"; // CRACOW
 // const COPENHAGEN_CORDS = "55.676098,12.568337";
-const CRACOW_LON = "50.064651";
-const CRACOW_LAT = "19.944981";
+const CRACOW_LAT = "50.064651";
+const CRACOW_LON = "19.944981";
 
 const API = `
 https://api.openweathermap.org/data/2.5/onecall?lat=${CRACOW_LAT}&lon=${CRACOW_LON}&appid=${process.env.REACT_APP_API_KEY}&units=metric&lang=pl`;
-  // "?lang=pl&units=ca";
 
 
 class WeatherWrapper extends Component {
